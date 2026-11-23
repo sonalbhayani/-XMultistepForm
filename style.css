@@ -1,0 +1,751 @@
+
+/* ==============================
+   GLOBAL CSS
+============================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #F0F6FF;
+    font-family: Arial, sans-serif;
+}
+
+.main {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    width: 75%;
+    max-width: 1100px;
+    min-height: 600px;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 15px;
+    gap: 30px;
+}
+
+/* ==============================
+   SIDEBAR - DESKTOP
+============================== */
+
+.sidebar {
+    width: 30%;
+    
+    min-width: 200px;
+    flex-shrink: 0;
+    background-image: url("./sidebarImage.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    padding: 35px 20px;
+}
+
+.sidebar_list_desktop {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 25px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+ .sidebar_text{
+    font-size: 16px; /* Example font size for desktop */
+    display: flex;
+    flex-direction: column;
+    padding-left:30px
+  }
+.sidebar_item {
+    display: flex;
+     color: #ffff;
+    align-items: center;
+    justify-content: center;
+}
+  .sidebar_link{
+    /* Example styles for sidebar links on desktop */
+    text-decoration: none;
+    color: #ffff;
+    font-size: 0.7rem;
+    font-weight: bold;
+
+  }
+
+/* Number circles */
+
+.step_class {
+    width: 42px;
+    height: 42px;
+    border: 2px solid white;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+/* Active number */
+
+.step_class.active {
+    background-color: #BFE2FD;
+    color: #02295A;
+    border-color: #BFE2FD;
+}
+
+/* ==============================
+   MAIN CONTENT
+============================== */
+
+.main_content {
+    flex: 1;
+    min-width: 0;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.form_tag {
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.heading {
+    font-size: 28px;
+    color: #02295A;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.head_line {
+    color: gray;
+    font-size: 15px;
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+/* ==============================
+   PERSONAL INFORMATION
+============================== */
+
+.input_form {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px;
+}
+
+.input_form label {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #02295A;
+}
+
+.form_input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    font-size: 15px;
+}
+
+.form_input:focus {
+    border-color: #473DFF;
+}
+
+/* ==============================
+   BUTTONS
+============================== */
+
+.button_step {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.next_btn {
+    background-color: #02295A;
+    color: #fff;
+    padding: 12px 22px;
+    border-radius: 5px;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.next_btn:hover {
+    background-color: #174A8B;
+}
+
+.go_btn {
+    border: none;
+    background-color: transparent;
+    padding: 10px;
+    font-size: 15px;
+    color: gray;
+    cursor: pointer;
+}
+
+.go_btn:hover {
+    color: #02295A;
+}
+
+/* ==============================
+   SELECT PLAN
+============================== */
+
+.plan_list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.plan_card {
+    padding: 15px;
+    flex: 1;
+    min-width: 0;
+    min-height: 170px;
+    border: 2px solid #D6D9E6;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.plan_card:hover {
+    border-color: #473DFF;
+}
+
+.card_active {
+    border: 2px solid #02295A;
+    background-color: #F0F6FF;
+}
+
+.subheading {
+    margin-bottom: 5px;
+    color: #02295A;
+    font-size: 17px;
+}
+
+.plan_card span {
+    color: gray;
+    font-size: 14px;
+}
+
+.arcade_img,
+.advance_img,
+.pro_img {
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.arcade_img {
+    background-color: #FFAF7E;
+}
+
+.advance_img {
+    background-color: #F9818E;
+}
+
+.pro_img {
+    background-color: #0551C8;
+}
+
+/* ==============================
+   BILLING TOGGLE
+============================== */
+
+.toggle_div {
+    width: 100%;
+    background-color: #F0F6FF;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 25px;
+}
+
+.billing-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.billing-toggle span {
+    font-size: 16px;
+    color: #777;
+}
+
+.billing-toggle span.active_btn {
+    color: #02295A;
+    font-weight: bold;
+}
+
+/* Toggle switch */
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 55px;
+    height: 28px;
+    flex-shrink: 0;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    inset: 0;
+    background-color: #02295A;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.slider::before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.switch input:checked + .slider::before {
+    transform: translateX(27px);
+}
+
+/* ==============================
+   ADD-ONS
+============================== */
+
+.addon_list {
+    width: 100%;
+}
+
+.addon_card {
+    border: 2px solid #D6D9E6;
+    padding: 15px;
+    margin: 12px 0;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    transition: 0.3s;
+}
+
+.addon_card:hover {
+    border-color: #473DFF;
+}
+
+.addon_card span {
+    font-size: 14px;
+    color: #473DFF;
+    white-space: nowrap;
+}
+
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin: 10px;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.addon_info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.addon_info span {
+    color: gray;
+    font-size: 13px;
+}
+
+.addon_left {
+    display: flex;
+    align-items: center;
+    min-width: 0;
+}
+
+/* ==============================
+   CONFIRMATION
+============================== */
+
+.addon_card {
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.addon_card.active {
+    background-color: #F0F6FF;
+}
+
+.addon_card h3 {
+    color: #473DFF;
+}
+
+.addon_card a {
+    color: #777;
+    font-size: 13px;
+}
+
+/* ==============================
+   THANK YOU SECTION
+============================== */
+
+.thank_div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    text-align: center;
+    padding: 20px;
+}
+
+.thank_div h2 {
+    color: #02295A;
+}
+
+.ptag {
+    margin: 10px 20px;
+    font-size: 15px;
+    color: #777;
+    line-height: 1.6;
+}
+
+/* ==============================
+   FORM VALIDATION
+============================== */
+
+.error {
+    color: red;
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+input.error {
+    border: 1px solid red;
+}
+
+input.valid {
+    border: 1px solid green;
+}
+
+/* ==============================
+   TABLET RESPONSIVE
+============================== */
+
+@media (max-width: 900px) {
+
+    .container {
+        width: 95%;
+        gap: 20px;
+    }
+
+    .sidebar {
+        width: 25%;
+        min-width: 130px;
+    }
+    .sidebar_text{
+      display: none;
+    }
+
+    .main_content {
+        padding: 15px;
+    }
+
+    .heading {
+        font-size: 24px;
+    }
+
+    .plan_list {
+        gap: 10px;
+    }
+
+    .plan_card {
+        padding: 10px;
+    }
+}
+
+/* ==============================
+   MOBILE RESPONSIVE
+============================== */
+
+@media (max-width: 600px) {
+
+    body {
+        background-color: #F0F6FF;
+    }
+
+    .main {
+        display: block;
+        min-height: 100vh;
+        padding: 0;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        min-height: 100vh;
+        padding: 0;
+        gap: 0;
+        border-radius: 0;
+        background-color: #F0F6FF;
+    }
+
+    /* Sidebar at top */
+
+    .sidebar {
+        width: 100%;
+        min-width: 100%;
+        height: 180px;
+        padding: 35px 15px;
+        border-radius: 0;
+        background-image: url("./sidebarImage.png");
+        background-size: cover;
+        background-position: center bottom;
+    }
+
+    /* Horizontal numbers */
+
+    .sidebar_list_desktop {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        padding: 0;
+        margin: 0;
+    }
+
+    .sidebar_item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+    }
+
+    .step_class {
+        width: 38px;
+        height: 38px;
+        font-size: 14px;
+    }
+
+    /* Form card */
+
+    .main_content {
+        width: calc(100% - 30px);
+        margin: -65px auto 25px;
+        padding: 25px 20px;
+        min-height: 420px;
+        background-color: white;
+        border-radius: 10px;
+        position: relative;
+        z-index: 1;
+    }
+
+    .form_tag {
+        min-height: 100%;
+        gap: 25px;
+    }
+
+    .heading {
+        font-size: 23px;
+    }
+
+    .head_line {
+        font-size: 14px;
+        line-height: 1.5;
+        margin-bottom: 25px;
+    }
+
+    /* Personal info */
+
+    .input_form {
+        padding-bottom: 15px;
+    }
+
+    .form_input {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    /* Plan cards */
+
+    .plan_list {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .plan_card {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 15px;
+        width: 100%;
+        min-height: 85px;
+        padding: 12px;
+    }
+
+    .plan_card > div {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .arcade_img,
+    .advance_img,
+    .pro_img {
+        width: 45px;
+        height: 45px;
+        flex-shrink: 0;
+    }
+
+    /* Billing */
+
+    .toggle_div {
+        margin-top: 20px;
+        padding: 15px 5px;
+    }
+
+    .billing-toggle {
+        gap: 12px;
+    }
+
+    .billing-toggle span {
+        font-size: 14px;
+    }
+
+    /* Add-ons */
+
+    .addon_card {
+        padding: 10px;
+        margin: 12px 0;
+    }
+
+    .addon_info .subheading {
+        font-size: 14px;
+    }
+
+    .addon_info span {
+        font-size: 12px;
+    }
+
+    .addon_card > div:last-child span {
+        font-size: 12px;
+    }
+
+    /* Confirmation */
+
+    .addon_card {
+        padding: 12px 5px;
+        margin: 8px 0;
+    }
+
+    .addon_card .subheading {
+        font-size: 14px;
+    }
+
+    /* Buttons */
+
+    .button_step {
+        margin-top: 25px;
+        gap: 10px;
+    }
+
+    .next_btn {
+        padding: 12px 16px;
+        font-size: 13px;
+    }
+
+    .go_btn {
+        font-size: 14px;
+    }
+
+    /* Thank you */
+
+    .thank_div {
+        padding: 15px 5px;
+    }
+
+    .thank_div img {
+        width: 75px;
+        height: 75px;
+    }
+
+    .ptag {
+        margin: 10px 0;
+        font-size: 14px;
+    }
+}
+
+/* ==============================
+   SMALL MOBILE
+============================== */
+
+@media (max-width: 360px) {
+
+    .sidebar_list_desktop {
+        gap: 14px;
+    }
+
+    .step_class {
+        width: 34px;
+        height: 34px;
+    }
+
+    .main_content {
+        padding: 20px 15px;
+    }
+
+    .heading {
+        font-size: 21px;
+    }
+
+    .next_btn {
+        padding: 10px 12px;
+    }
+}

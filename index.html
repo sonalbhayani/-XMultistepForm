@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>multiple step form</title>
+    <link rel="stylesheet" href="style.css">
+   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+</head>
+<body>
+    <main class="main">
+        <div class="container">
+            <section class="sidebar">
+                <ul class="sidebar_list_desktop">
+                    <li class="sidebar_item">
+                        <div class="step_class active">1</div>
+                        <div class="sidebar_text"><a href="#step1" class="sidebar_link">Step 1</a>
+                            <span class="sidebar_icon">Your Info</span></div></li>
+                    
+                    <li class="sidebar_item">
+                        <div class="step_class">2</div>
+                        <div class="sidebar_text"><a href="#step2" class="sidebar_link">Step 2</a>
+                            <span class="sidebar_icon">Select Plan</span></div></li>
+                    <li class="sidebar_item">
+                        <div class="step_class">3</div>
+                        <div class="sidebar_text"><a href="#step3" class="sidebar_link">Step 3</a>
+                            <span class="sidebar_icon">Add-ons</span></div></li>
+                    <li class="sidebar_item">
+                        <div class="step_class">4</div>
+                        <div class="sidebar_text"><a href="#step4" class="sidebar_link">Step 4</a>
+                            <span class="sidebar_icon">Summary</span></div></li>
+                </ul>
+                </ul>
+            </section>
+            <section class="main_content" id="step1" >
+                <form id="PersonalForm" class="form_tag">
+               
+                    <div>
+                        <h2 class="heading">Personal Info</h2>
+                        <p class="head_line"> Please provide your name,email address, and phone number.</p> 
+                        <div class="input_form">
+                            <label for="userName">Name</label>
+                            <input type="text" name="userName" id="userName" class="form_input" placeholder="e.g. sonal bhayani">
+                        </div>
+                        <div class="input_form">
+                            <label for="email">Email</label>
+                            <input type="email" name="email" id="email" class="form_input" 
+                            placeholder="e.g. sonal@xyz.com">
+                        </div>
+                        <div class="input_form">
+                            <label for="phone">Phone Number</label>
+                            <input type="text" name="phone" id="phone" class="form_input" 
+                            placeholder="e.g. 123456789">
+                        </div>
+                    </div>
+                    <div class="button_step">
+                        <div></div>
+                        <button class="next_btn" data-step="step2" id="next-button" data-current-step="step1">Next Step</button>
+                    </div>
+                
+               </form>
+                
+            </section>
+              <section class="main_content" id="step2"  style="display: none;">
+                <form id="PlanForm" class="form_tag">
+               
+                    <div>
+                        <h2 class="heading">Select Your Plan</h2>
+                        <p class="head_line"> You have the option of monthly or yearly billing.</p> 
+                        <div class="plan_list">
+                            <div class="plan_card" data-value="arcade">
+                                <img src="./arcade.png" alt="arcade_img" height="50px" width="50px" class="arcade_img">
+                                <div>
+                                    
+                                    <h2 class="subheading">Arcade</h2>
+                                    <span>$9/mo</span>
+                                </div>
+                            
+                            </div>
+                            <div class="plan_card" data-value="advance">
+                                <img src="./advanced.png" alt="advance_img" height="50px" width="50px" class="advance_img">
+                            <div>
+                            
+                                <h2 class="subheading">Advance</h2>
+                                <span>$12/mo</span>
+                            </div>
+                            </div>
+                            <div class="plan_card" data-value="pro">
+                                <img src="./pro.png" alt="pro_img" height="50px" width="50px" class="pro_img">
+                                <div>
+                                   
+                                    <h2 class="subheading">Pro</h2>
+                                    <span>$15/mo</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="hidden" name="select_plan" id="select_plan" class="hidden_txt">
+                    <div class="toggle_div">
+                        <div class="billing-toggle">
+                            <span id="monthlyText" class="active_btn">Monthly</span>
+
+                            <label class="switch">
+                                <input type="checkbox" id="billingToggle">
+                                <span class="slider"></span>
+                            </label>
+
+                            <span id="yearlyText">Yearly</span>
+
+                        </div>
+                    </div>
+                    <div class="button_step">
+                        <button class="go_btn" data-step="step1" data-current-step="step2">Go Back</button>
+                        <button class="next_btn" data-step="step3" data-current-step="step2">Next Step</button>
+                    </div>
+                
+               </form>
+                
+            </section>
+            <section class="main_content" id="step3" style="display: none;">
+                <form id="addForm" class="form_tag">
+               
+                    <div>
+                        <h2 class="heading">Pick add-ons</h2>
+                        <p class="head_line">Add-ons help enhance your gaming experience.</p> 
+                        <div class="addon_list">
+                            <div class="addon_card">
+                                 <div class="addon_left">
+                                    <input type="checkbox"  name="online_service" value="online_service" id="online_service">
+                                    <div class="addon_info">
+                                        <h2 class="subheading">Online Services</h2>
+                                        <span>Access to multiplayer games</span>
+                                    </div>
+                                </div>
+                               <div><span>+$1/mo</span></div>
+                               
+                            
+                            </div>
+                            <div class="addon_card">
+                                 <div class="addon_left">
+                                    <input type="checkbox"  name="online_service" value="online_service" id="online_service">
+                                    <div class="addon_info">
+                                        <h2 class="subheading">Larger Storage</h2>
+                                        <span>Extra 1TB of cloud save</span>
+                                    </div>
+                                </div>
+                               <div><span>+$1/mo</span></div>
+                               
+                            
+                            </div>
+                            <div class="addon_card">
+                                 <div class="addon_left">
+                                    <input type="checkbox"  name="online_service" value="online_service" id="online_service">
+                                    <div class="addon_info">
+                                        <h2 class="subheading">Customizable Profit</h2>
+                                        <span>Custom theme on your profile</span>
+                                    </div>
+                                </div>
+                               <div><span>+$1/mo</span></div>
+                               
+                            
+                            </div>
+                        </div>
+                    </div>
+                    <div class="button_step">
+                        <button class="go_btn" data-step="step2" data-current-step="step3">Go Back</button>
+                        <button class="next_btn" data-step="step4" data-current-step="step3">Next Step</button>
+                    </div>
+                
+               </form>
+                
+            </section>
+            <section class="main_content" id="step4"  style="display: none;">
+                <form id="confirmForm" class="form_tag">
+               
+                    <div>
+                        <h2 class="heading">Finishing up</h2>
+                        <p class="head_line">Double-check everything looks OK before confirming.</p> 
+                        <div class="addon_list">
+                            <div class="addon_card active">
+                                 <div class="check_service">
+                                    <div class="addon_info">
+                                        <h2 class="subheading">Advance (Monthly)</h2>
+                                        <a href="#">change</a>
+                                    </div>
+                                </div>
+                               <div><span>$12/mo</span></div>
+                               
+                            
+                            </div>
+                            <div class="addon_card">
+                                 <div class="check_service">
+                                    <div class="">
+                                        <span class="subheading">Total(Per month)</span>
+                                        
+                                    </div>
+                                </div>
+                               <div><h3>$12/mo</h3></div>
+                               
+                            
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="button_step">
+                        <button class="go_btn" data-step="step2" data-current-step="step3">Go Back</button>
+                        <button class="next_btn" data-step="step4" data-current-step="step3">Next Step</button>
+                    </div>
+                
+               </form>
+                
+            </section>
+            <section class="main_content" id="step5" style="display: none;" >
+               <div class="thank_div">
+                    <img src="./checked.png" alt="checked" width="100px" height="100px">
+                    <h2>Thank you!</h2>
+                    <p class="ptag">Thanks for confriming your subscription! We hope you have fun using our platform. If you ever need support, please feel free to email us at </p>
+                    <p class="ptag">support@loremgaming.com</p>
+               </div>
+            </section>
+    </div>
+    </main>
+</body>
+<script>
+    $(document).ready(function () {
+
+    function changeStep(current, next) {
+
+    // Hide current step
+        $("#" + current).hide();
+
+        // Show next step
+        $("#" + next).show();
+
+        // Remove active class from all sidebar steps
+        $(".step_class").removeClass("active");
+
+        // Add active class to the selected sidebar step
+        $(".sidebar_item").eq(parseInt(next.replace("step", "")) - 1)
+            .find(".step_class").addClass("active");
+
+    }
+
+    $(document).on("click",".plan_card",function(e){
+        $(".plan_card").removeClass("card_active");
+        const value=$(this).attr("data-value");
+        $(this).addClass("card_active");
+        $("#select_plan").val(value);
+        console.log(value); 
+    })
+
+    $("#billingToggle").change(function () {
+
+    if ($(this).is(":checked")) {
+
+        $("#yearlyText").addClass("active_btn");
+        $("#monthlyText").removeClass("active_btn");
+
+        console.log("Yearly");
+
+    } else {
+
+        $("#monthlyText").addClass("active_btn");
+        $("#yearlyText").removeClass("active_btn");
+
+        console.log("Monthly");
+    }
+
+});
+$(document).on("click",".go_btn",function(){
+   
+    const current=$(this).attr("data-current-step");
+    
+    const pervoius=$(this).attr("data-step");
+    console.log(current+"----"+pervoius);
+    $("#" + current).hide();
+    $("#" + previous).show();
+       changeStep(current, previous);
+})
+
+
+    $("#PersonalForm").validate({
+
+        rules: {
+            name: {
+                required: true,
+                minlength: 3
+            },
+
+            email: {
+                required: true,
+                email: true
+            },
+
+            phone: {
+                required: true,
+                minlength: 10
+            },
+
+        },
+
+        messages: {
+            name: {
+                required: "Please enter your name",
+                minlength: "Name must be at least 3 characters"
+            },
+
+            email: {
+                required: "Please enter your email",
+                email: "Please enter a valid email"
+            },
+
+            phone: {
+                required: "Please enter your phone",
+                minlength: "Phone must be at least 10 digits"
+            },
+
+        },
+
+        submitHandler: function (form) {
+            $("#step1").hide();
+            $("#step2").show();
+            changeStep("step1", "step2");
+
+            return false;
+        }
+
+    });
+     $("#PlanForm").validate({
+          ignore: [],
+         rules: {
+            select_plan: {
+                required: true
+            }
+
+        },
+         messages: {
+            select_plan: {
+                required: "Please Select plan",
+               
+            },
+
+
+        },
+
+        submitHandler: function (form) {
+            
+        $("#step2").hide();
+        $("#step3").show();
+        changeStep("step2", "step3");
+        return false;
+        }
+     });
+     $("#addForm").validate({
+
+            rules: {
+                // Add your validation rules here
+            },
+
+            messages: {
+                // Add your validation messages here
+            },
+
+            submitHandler: function (form) {
+                 $("#step3").hide();
+                 $("#step4").show();
+                changeStep("step3", "step4");
+
+                return false;
+            }
+
+        });
+     $("#confirmForm").validate({
+
+            rules: {
+                // Add your validation rules here
+            },
+
+            messages: {
+                // Add your validation messages here
+            },
+
+            submitHandler: function (form) {
+                 $("#step4").hide();
+                 $("#step5").show();
+
+                return false;
+            }
+
+        });
+    
+
+});
+</script>
+</html>
