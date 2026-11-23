@@ -211,7 +211,7 @@
                     </div>
                     <div class="button_step">
                         <button class="go_btn" data-step="step3" data-current-step="step4">Go Back</button>
-                        <button class="next_btn" data-step="step5" data-current-step="step4" >Next Step</button>
+                        <button class="next_btn" data-step="step5" data-current-step="step4" >Confirm</button>
                     </div>
                 
                </form>
@@ -220,7 +220,7 @@
             <section class="main_content" id="step5" style="display: none;" >
                <div class="thank_div">
                     <img src="./checked.png" alt="checked" width="100px" height="100px">
-                    <h2>Thank you!</h2>
+                    <h2>Thank You!</h2>
                     <p class="ptag">Thanks for confriming your subscription! We hope you have fun using our platform. If you ever need support, please feel free to email us at </p>
                     <p class="ptag">support@loremgaming.com</p>
                </div>
@@ -231,7 +231,7 @@
 <script>
     $(document).ready(function () {
       
-        $("#step1").show();
+        $("#step1").show(); 
         $("#step2, #step3, #step4, #step5").hide();
 
     function changeStep(current, next) {
