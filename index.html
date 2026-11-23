@@ -269,15 +269,14 @@
     }
 
 });
-$(document).on("click",".go_btn",function(){
+$(document).on("click",".go_btn",function(e){
    
-    const current=$(this).attr("data-current-step");
-    
-    const pervoius=$(this).attr("data-step");
-    console.log(current+"----"+pervoius);
-    $("#" + current).hide();
-    $("#" + previous).show();
-       changeStep(current, previous);
+      e.preventDefault();
+
+        const current = $(this).attr("data-current-step");
+        const previous = $(this).attr("data-step");
+
+        changeStep(current, previous);
 })
 
 
