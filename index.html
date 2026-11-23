@@ -32,7 +32,7 @@
                         <div class="sidebar_text"><a href="#step4" class="sidebar_link">Step 4</a>
                             <span class="sidebar_icon">Summary</span></div></li>
                 </ul>
-                </ul>
+               
             </section>
             <section class="main_content" id="step1" >
                 <form id="PersonalForm" class="form_tag">
@@ -130,7 +130,8 @@
                         <div class="addon_list">
                             <div class="addon_card">
                                  <div class="addon_left">
-                                    <input type="checkbox"  name="online_service" value="online_service" id="online_service">
+                                    <input type="checkbox"  name="online_service" 
+                                    value="online_service" id="online_service">
                                     <div class="addon_info">
                                         <h2 class="subheading">Online Services</h2>
                                         <span>Access to multiplayer games</span>
@@ -142,7 +143,8 @@
                             </div>
                             <div class="addon_card">
                                  <div class="addon_left">
-                                    <input type="checkbox"  name="online_service" value="online_service" id="online_service">
+                                    <input type="checkbox"  name="online_service" 
+                                    value="larger_storage" id="larger_storage">
                                     <div class="addon_info">
                                         <h2 class="subheading">Larger Storage</h2>
                                         <span>Extra 1TB of cloud save</span>
@@ -154,7 +156,8 @@
                             </div>
                             <div class="addon_card">
                                  <div class="addon_left">
-                                    <input type="checkbox"  name="online_service" value="online_service" id="online_service">
+                                    <input type="checkbox"  name="online_service" 
+                                    value="customizable_profile" id="customizable_profile">
                                     <div class="addon_info">
                                         <h2 class="subheading">Customizable Profit</h2>
                                         <span>Custom theme on your profile</span>
@@ -231,24 +234,20 @@
         $("#step1").show();
         $("#step2, #step3, #step4, #step5").hide();
 
-        $(".step_class").removeClass("active");
-        $('.step_class[data-step="step1"]').addClass("active");
     function changeStep(current, next) {
 
-    // Hide current step
-        $("#" + current).hide();
+    $("#" + current).hide();
+    $("#" + next).show();
 
-        // Show next step
-        $("#" + next).show();
+    $(".step_class").removeClass("active");
 
-        // Remove active class from all sidebar steps
-        $(".step_class").removeClass("active");
+    const stepIndex = parseInt(next.replace("step", "")) - 1;
 
-        // Add active class to the selected sidebar step
-        $(".sidebar_item").eq(parseInt(next.replace("step", "")) - 1)
-            .find(".step_class").addClass("active");
-
-    }
+    $(".sidebar_item")
+        .eq(stepIndex)
+        .find(".step_class")
+        .addClass("active");
+}
     $(document).on("click", ".addon_card", function (e) {
 
     if ($(e.target).is("input[type='checkbox']")) {
@@ -368,8 +367,7 @@ $(document).on("click",".go_btn",function(e){
 
         submitHandler: function (form) {
             
-        $("#step2").hide();
-        $("#step3").show();
+        
         changeStep("step2", "step3");
         return false;
         }
