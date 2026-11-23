@@ -6,6 +6,9 @@
 * {
     box-sizing: border-box;
 }
+.main_content {
+    display: none;
+}
 
 body {
     margin: 0;
@@ -389,7 +392,11 @@ input[type="checkbox"] {
     flex-direction: column;
     gap: 5px;
 }
-
+.plan_card.selected,
+.plan_card.card_active {
+    border: 1px solid #473dff;
+    background-color: #f0f6ff;
+}
 .addon_info span {
     color: gray;
     font-size: 13px;

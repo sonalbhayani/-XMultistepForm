@@ -205,8 +205,8 @@
                         </div>
                     </div>
                     <div class="button_step">
-                        <button class="go_btn" data-step="step2" data-current-step="step3">Go Back</button>
-                        <button class="next_btn" data-step="step4" data-current-step="step3">Next Step</button>
+                        <button class="go_btn" data-step="step3" data-current-step="step4">Go Back</button>
+                        <button class="next_btn" data-step="step5" data-current-step="step4">Next Step</button>
                     </div>
                 
                </form>
@@ -225,7 +225,12 @@
 </body>
 <script>
     $(document).ready(function () {
+      
+        $("#step1").show();
+        $("#step2, #step3, #step4, #step5").hide();
 
+        $(".step_class").removeClass("active");
+        $('.step_class[data-step="step1"]').addClass("active");
     function changeStep(current, next) {
 
     // Hide current step
@@ -242,6 +247,26 @@
             .find(".step_class").addClass("active");
 
     }
+    $(document).on("click", ".addon_card", function (e) {
+
+    if ($(e.target).is("input[type='checkbox']")) {
+        return;
+    }
+
+    let checkbox = $(this).find("input[type='checkbox']");
+
+    checkbox.prop("checked", !checkbox.prop("checked"));
+
+    $(this).toggleClass("selected", checkbox.prop("checked"));
+
+});
+    $(document).on("click", ".plan_card", function () {
+
+        $(".plan_card").removeClass("selected card_active");
+
+        $(this).addClass("selected card_active");
+
+    });
 
     $(document).on("click",".plan_card",function(e){
         $(".plan_card").removeClass("card_active");
