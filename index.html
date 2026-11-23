@@ -57,7 +57,7 @@
                     </div>
                     <div class="button_step">
                         <div></div>
-                        <button class="next_btn" data-step="step2" id="next-button" data-current-step="step1">Next Step</button>
+                        <button class="next_btn" data-step="step2" id="next-button" data-current-step="step1" id="next-button">Next Step</button>
                     </div>
                 
                </form>
@@ -113,7 +113,7 @@
                     </div>
                     <div class="button_step">
                         <button class="go_btn" data-step="step1" data-current-step="step2">Go Back</button>
-                        <button class="next_btn" data-step="step3" data-current-step="step2">Next Step</button>
+                        <button class="next_btn" data-step="step3" data-current-step="step2" id="next-button">Next Step</button>
                     </div>
                 
                </form>
@@ -166,7 +166,7 @@
                     </div>
                     <div class="button_step">
                         <button class="go_btn" data-step="step2" data-current-step="step3">Go Back</button>
-                        <button class="next_btn" data-step="step4" data-current-step="step3">Next Step</button>
+                        <button class="next_btn" data-step="step4" data-current-step="step3" id="next-button">Next Step</button>
                     </div>
                 
                </form>
@@ -206,7 +206,7 @@
                     </div>
                     <div class="button_step">
                         <button class="go_btn" data-step="step3" data-current-step="step4">Go Back</button>
-                        <button class="next_btn" data-step="step5" data-current-step="step4">Next Step</button>
+                        <button class="next_btn" data-step="step5" data-current-step="step4" id="next-button">Next Step</button>
                     </div>
                 
                </form>
@@ -260,21 +260,17 @@
     $(this).toggleClass("selected", checkbox.prop("checked"));
 
 });
-    $(document).on("click", ".plan_card", function () {
+   $(document).on("click", ".plan_card", function () {
 
-        $(".plan_card").removeClass("selected card_active");
+    $(".plan_card").removeClass("selected card_active");
 
-        $(this).addClass("selected card_active");
+    $(this).addClass("selected card_active");
 
-    });
+    const value = $(this).attr("data-value");
 
-    $(document).on("click",".plan_card",function(e){
-        $(".plan_card").removeClass("card_active");
-        const value=$(this).attr("data-value");
-        $(this).addClass("card_active");
-        $("#select_plan").val(value);
-        console.log(value); 
-    })
+    $("#select_plan").val(value).trigger("change");
+
+});
 
     $("#billingToggle").change(function () {
 
@@ -344,8 +340,7 @@ $(document).on("click",".go_btn",function(e){
         },
 
         submitHandler: function (form) {
-            $("#step1").hide();
-            $("#step2").show();
+           
             changeStep("step1", "step2");
 
             return false;
@@ -388,8 +383,7 @@ $(document).on("click",".go_btn",function(e){
             },
 
             submitHandler: function (form) {
-                 $("#step3").hide();
-                 $("#step4").show();
+                
                 changeStep("step3", "step4");
 
                 return false;
@@ -407,8 +401,8 @@ $(document).on("click",".go_btn",function(e){
             },
 
             submitHandler: function (form) {
-                 $("#step4").hide();
-                 $("#step5").show();
+                 
+                changeStep("step4", "step5");
 
                 return false;
             }
