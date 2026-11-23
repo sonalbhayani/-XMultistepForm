@@ -57,7 +57,8 @@
                     </div>
                     <div class="button_step">
                         <div></div>
-                        <button class="next_btn" data-step="step2" id="next-button" data-current-step="step1" id="next-button">Next Step</button>
+                        <button class="next_btn" data-step="step2" 
+                        id="next-button" data-current-step="step1">Next Step</button>
                     </div>
                 
                </form>
@@ -113,7 +114,8 @@
                     </div>
                     <div class="button_step">
                         <button class="go_btn" data-step="step1" data-current-step="step2">Go Back</button>
-                        <button class="next_btn" data-step="step3" data-current-step="step2" >Next Step</button>
+                        <button class="next_btn" data-step="step3" 
+                        data-current-step="step2" >Next Step</button>
                     </div>
                 
                </form>
@@ -304,7 +306,7 @@ $(document).on("click",".go_btn",function(e){
     $("#PersonalForm").validate({
 
         rules: {
-            name: {
+            userName: {
                 required: true,
                 minlength: 3
             },
@@ -322,7 +324,7 @@ $(document).on("click",".go_btn",function(e){
         },
 
         messages: {
-            name: {
+            userName: {
                 required: "Please enter your name",
                 minlength: "Name must be at least 3 characters"
             },
